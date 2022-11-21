@@ -11,7 +11,7 @@ I have also provided a dev container configuration, so that anybody that anybody
 - [Anchore Grype](https://github.com/anchore/grype#installation)
 
 ### Steps
-1. Install the prerequisite dependencies. If using a dev container or a codespace, just open an instance of the container instance.
+1. Install the prerequisite dependencies. If using a [dev container](https://code.visualstudio.com/docs/devcontainers/containers#_quick-start-open-an-existing-folder-in-a-container) or a [codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository), just open an instance of the container instance.
 2. Build the application
     ```bash
     > ./appconfigdemo/mvn clean package
