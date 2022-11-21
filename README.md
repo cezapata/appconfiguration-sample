@@ -2,7 +2,7 @@
 
 The following sample is meant to highlight the current vulnerabilities found on a starter Java Spring app that uses the [Azure SDK App Configuration service](https://learn.microsoft.com/en-us/java/api/overview/azure/spring-cloud-starter-appconfiguration-config-readme?source=recommendations&view=azure-java-stable). This repo has been set up to follow the instructions defined on [this Quickstart tutorial](https://learn.microsoft.com/en-us/azure/azure-app-configuration/quickstart-java-spring-app) to configure an app to use the app configuration service.
 
-I have also provided a dev container configuration, so that anybody that anybody with access to Docker and VS Code can re-create an environment to test the application. I have also made it available in GitHub so that anybody that wants to run it as a CodeSpace can use it as it is.
+I have also provided a dev container configuration, so that anybody with access to Docker and VS Code can re-create an environment to test the application. I have also made it available in GitHub so that anybody that wants to run it as a CodeSpace can use it as it is.
 
 ## Instructions
 
