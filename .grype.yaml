@@ -1,0 +1,90 @@
+ignore:
+  # Seems like another false positive: maven-wrapper is mapping to maven@3.1.0 which exposes the vulnerability, whereas it shouldn't apply
+  # since dev container and maven wrapper point to 3.8.6
+  - vulnerability: CVE-2021-26291           # (critical) fixed as of maven 3.8.1
+    package:
+        name: maven-wrapper
+
+  # reactor-netty-core v 1.0.24 uses netty v4.1.82.Final for which vulnerabilities below have been fixed, but there is a mismatch on CPEs
+  - vulnerability: CVE-2019-20444           # (critical) fixed as of netty 4.1.44
+    package:
+      name: reactor-netty-core
+  - vulnerability: CVE-2019-20445           # (critical) fixed as of netty 4.1.44
+    package:
+      name: reactor-netty-core
+  - vulnerability: CVE-2015-2156            # (high) fixed as of netty 4.1.0.Beta5
+    package:
+      name: reactor-netty-core
+  - vulnerability: CVE-2019-16869           # (high) fixed as of netty 4.1.42
+    package:
+      name: reactor-netty-core
+  - vulnerability: CVE-2021-37136           # (high) fixed as of netty 4.1.68
+    package:
+      name: reactor-netty-core
+  - vulnerability: CVE-2021-37137           # (high) fixed as of netty 4.1.68
+    package:
+      name: reactor-netty-core
+  - vulnerability: CVE-2014-3488            # (medium) fixed as of netty 3.9.2
+    package:
+      name: reactor-netty-core
+  - vulnerability: CVE-2021-21290           # (medium) fixed as of netty 4.1.59.Final
+    package:
+      name: reactor-netty-core
+  - vulnerability: CVE-2021-21295           # (medium) fixed as of netty 4.1.60.Final
+    package:
+      name: reactor-netty-core
+  - vulnerability: CVE-2021-21409           # (medium) fixed as of netty 4.1.61.Final
+    package:
+      name: reactor-netty-core
+  - vulnerability: CVE-2021-43797           # (medium) fixed as of netty 4.1.71.Final
+    package:
+      name: reactor-netty-core
+  - vulnerability: CVE-2022-24823           # (medium) fixed as of netty 4.1.77.Final
+    package:
+      name: reactor-netty-core
+
+  # reactor-netty-http v 1.0.24 uses reactor-netty-core v 1.0.24 for which vulnerabilities below have been fixed, but there is a mismatch on CPEs
+  - vulnerability: CVE-2019-20444           # (critical) fixed as of netty 4.1.44
+    package:
+      name: reactor-netty-http
+  - vulnerability: CVE-2019-20445           # (critical) fixed as of netty 4.1.44
+    package:
+      name: reactor-netty-http
+  - vulnerability: CVE-2015-2156            # (high) fixed as of netty 4.1.0.Beta5
+    package:
+      name: reactor-netty-http
+  - vulnerability: CVE-2019-16869           # (high) fixed as of netty 4.1.42
+    package:
+      name: reactor-netty-http
+  - vulnerability: CVE-2021-37136           # (high) fixed as of netty 4.1.68
+    package:
+      name: reactor-netty-http
+  - vulnerability: CVE-2021-37137           # (high) fixed as of netty 4.1.68
+    package:
+      name: reactor-netty-http
+  - vulnerability: CVE-2014-3488            # (medium) fixed as of netty 3.9.2
+    package:
+      name: reactor-netty-http
+  - vulnerability: CVE-2021-21290           # (medium) fixed as of netty 4.1.59.Final
+    package:
+      name: reactor-netty-http
+  - vulnerability: CVE-2021-21295           # (medium) fixed as of netty 4.1.60.Final
+    package:
+      name: reactor-netty-http
+  - vulnerability: CVE-2021-21409           # (medium) fixed as of netty 4.1.61.Final
+    package:
+      name: reactor-netty-http
+  - vulnerability: CVE-2021-43797           # (medium) fixed as of netty 4.1.71.Final
+    package:
+      name: reactor-netty-http
+  - vulnerability: CVE-2022-24823           # (medium) fixed as of netty 4.1.77.Final
+    package:
+      name: reactor-netty-http
+
+  # spring-core exposes a remote execution vulnerability by exposing deserialization methods through HTTP invoker endpoints.
+  # More info here: https://github.com/spring-projects/spring-framework/issues/24434
+  # There is no fix for this vulnerability, other than guidance to prevent the use case from happening. The Spring team
+  # has also deprecated the classes that expose this problem to warn consumers from being exposed. Unfortunately for us,
+  # we will either add an exclusion to the vulnerability (and add mitigations to prevent risk),
+  # or will have to avoid using spring boot
+  - vulnerability: CVE-2016-1000027         # (critical) not fixed
